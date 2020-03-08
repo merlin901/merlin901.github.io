@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>常见技术词汇拼写</title>
+      <link href="/2020/03/08/31852/"/>
+      <url>/2020/03/08/31852/</url>
+      
+        <content type="html"><![CDATA[<p>在这个金三银四的时节，又到了跳槽和找工作的高峰期。作为一名合格的程序员，在简历中最最基本的就是技术词汇不能有错拼。虽然是个简单的单词，但是在简历上拼错的人也并不少见，经常是大小写不分，我自己就是一个鲜活的例子。尽管说一两个单词拼错了并不能说明你技术不行，但是在面试官面前你的简历会有一定程度的减分。这个本不该丢的分，实在可惜。</p><p>为了自己以后不再犯这样的低级错误，同时也可以帮助后面需要的人，今天我就做一下汇总。当然，我的技术非常有限，我所罗列的技术只是我目前所能接触范围之内的，以后碰到新词会持续更新。若有什么不对的地方，还望各位大佬大方指出。</p><table><thead><tr><th>正确拼写</th><th>错误示例</th></tr></thead><tbody><tr><td>Java</td><td>java</td></tr><tr><td>HTML</td><td>html</td></tr><tr><td>CSS</td><td>css</td></tr><tr><td>JavaScript、JS</td><td>javascript、js</td></tr><tr><td>Servlet</td><td>servlet</td></tr><tr><td>JSP</td><td>jsp</td></tr><tr><td>Tomcat</td><td>tomcat</td></tr><tr><td>MySQL</td><td>Mysql、mysql</td></tr><tr><td>Web</td><td>WEB、web</td></tr><tr><td>Ajax</td><td>ajax</td></tr><tr><td>JSON</td><td>json</td></tr><tr><td>Linux</td><td>linux</td></tr><tr><td>Thymeleaf</td><td>thymeleaf</td></tr><tr><td>Spring</td><td>spring</td></tr><tr><td>Spring Boot</td><td>SpringBoot、springboot</td></tr><tr><td>Mybatis</td><td>mybatis</td></tr><tr><td>Spring MVC</td><td>SpringMVC、springmvc</td></tr><tr><td>Git</td><td>GIT、git</td></tr><tr><td>RESTful</td><td>restful</td></tr><tr><td>Redis</td><td>redis</td></tr><tr><td>Eclipse</td><td>eclipse</td></tr><tr><td>IDEA</td><td>idea</td></tr><tr><td></td><td></td></tr></tbody></table><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【转载】CentOS 7 网络环境配置</title>
+      <link href="/2020/03/07/3137/"/>
+      <url>/2020/03/07/3137/</url>
+      
+        <content type="html"><![CDATA[<p>本文转载自<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.cnblogs.com%2Fstormlong%2Fp%2F10854306.html" target="_blank" rel="noopener">https://www.cnblogs.com/stormlong/p/10854306.html</a></p><p>最近刚装完 CentOS 7.5 系统，由于网络不通，导致无法用 yum 命令下载软件，经过了各种折腾，终于搞定了，这里讲解一下 如何设置初始网络。</p><p>本案例环境 VmWare 11.0 , 操作系统 CentOS 7.5（安装时，选择了桌面版）。</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-16726166ac1f5126.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650/format/webp" alt="img"></p><h3 id="一、主机-ping-通网络"><a href="#一、主机-ping-通网络" class="headerlink" title="一、主机 ping 通网络"></a>一、主机 ping 通网络</h3><p>这个不用多说，只要你电脑连接网络就可以实现。</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-44a1e75879c25950.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/546/format/webp" alt="img"></p><p>这里会发现 ping 百度 实际就是在 ping 61.135.169.121 这台主机，这台主机放在了公网了，所以能够让 所有联网用户 ping 通。</p><p>而 <a href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 到 61.135.169.121 实际上经过了 DNS 服务器，它就是把 域名 与 ip 地址对应起来，这里简单解释一下。</p><h3 id="二、虚拟机-ping-通网络"><a href="#二、虚拟机-ping-通网络" class="headerlink" title="二、虚拟机 ping 通网络"></a>二、虚拟机 ping 通网络</h3><p>这个是我们的主要目的，有了网络，我们才用 yum 命令 安装所需软件。</p><p>这里我们采用 固定虚拟机 操作系统ip 的形式配置，方便我们在不同网络环境下，无须再次更改 ip 地址。</p><h4 id="1-VMware-虚拟网络编辑器-网络信息"><a href="#1-VMware-虚拟网络编辑器-网络信息" class="headerlink" title="1. VMware 虚拟网络编辑器 网络信息"></a>1. VMware 虚拟网络编辑器 网络信息</h4><p><img src="https://upload-images.jianshu.io/upload_images/3108076-f613ce3a07cd8288.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/341/format/webp" alt="img"></p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-6763e9f43c0c01fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1074/format/webp" alt="img"></p><p>这里我们 需要记下 第三个 地方的信息。第二步的配置 跟这个有关。</p><h4 id="2-操作系统-ip-配置-（桌面版）"><a href="#2-操作系统-ip-配置-（桌面版）" class="headerlink" title="2. 操作系统 ip 配置 （桌面版）"></a>2. 操作系统 ip 配置 （桌面版）</h4><p>打开虚拟机网络配置</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-dea12ff1ade027db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/367/format/webp" alt="img"></p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-cceb11e759f51bb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/593/format/webp" alt="img"></p><p>下面的 ip 地址配置，就是根据第一步的信息过来的。</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-fea3c4eb9d703a19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/578/format/webp" alt="img"></p><p>配置到这里就可以了，关闭网络，在重新连接一次，就可以 ping 通网络了。</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-014c6e57554ca13e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/741/format/webp" alt="img"></p><p>如果还没有 ping 通，可以尝试 还原默认设置 后，再次重复上述步骤。</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-55c4b1fb8703bccf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/584/format/webp" alt="img"></p><h4 id="2-操作系统-ip-配置-（配置文件版，可忽略）"><a href="#2-操作系统-ip-配置-（配置文件版，可忽略）" class="headerlink" title="2.操作系统 ip 配置 （配置文件版，可忽略）"></a>2.操作系统 ip 配置 （配置文件版，可忽略）</h4><p>实际上，上面图形化界面操作的就是这个文件，没有安装桌面的可以参考下面的操作–命令版</p><p>进入/etc/sysconfig/network-scripts/ifcfg-xxx 文件（xxx不同电脑可能不一样）</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-4bf2754d66b12744.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540/format/webp" alt="img"></p><p>主要更改这几个地方。修改后，重新连接网络即可。</p><h4 id="2-操作系统-ip-配置-（命令版）"><a href="#2-操作系统-ip-配置-（命令版）" class="headerlink" title="2.操作系统 ip 配置 （命令版）"></a>2.操作系统 ip 配置 （命令版）</h4><p>vim /etc/sysconfig/network-scripts/ifcfg-xxx</p><p>i 键 添加上述信息， esc 键回到命令行模式 :wq 写入并退出。</p><p>service network restart 重启网络。</p><h3 id="三、虚拟机-ping-通主机"><a href="#三、虚拟机-ping-通主机" class="headerlink" title="三、虚拟机 ping 通主机"></a>三、虚拟机 ping 通主机</h3><p>这一步不需要做什么，只需知道主机 IP 地址即可，实际上 ping 通也没有什么意义。</p><p>cmd 下 ipconfig 可以查看本机ip</p><p>例如：我用的 wifi 来连接的，则我的IP为 192.168.1.103</p><p>[图片上传中…(image-976b23-1583475319539-6)]</p><p>从虚拟机 ping 这个 IP 即可，发现可以 ping 的通</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-e74a505ed9e96d0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/735/format/webp" alt="img"></p><h3 id="四、主机-ping-通虚拟机"><a href="#四、主机-ping-通虚拟机" class="headerlink" title="四、主机 ping 通虚拟机"></a>四、主机 ping 通虚拟机</h3><p>这一步就显得有意义了，通常我们开启虚拟机，一般都是通过第三方连接工具来操作centos，不会直接在系统里面通过终端来操作。</p><p>所以使用第三方工具的前提就是 主机可以 ping 通虚拟机。</p><p>在主机打开这个，因为这个 是 NET模式下 的网卡，VM1是 仅主机模式 下的网卡，而我们第二步的配置 用的就是 Net 模式的 配置</p><p>[图片上传中…(image-c4e3eb-1583475319539-4)]</p><p>设置固定ip即可。</p><p>[图片上传中…(image-d87a3b-1583475319539-3)]</p><p>这里我们测试一下</p><p>我的虚拟机 IP为 192.168.126.125，当然也就是第二步设置的固定ip</p><p>[图片上传中…(image-d8cbb0-1583475319539-2)]</p><p>在主机下 ping 一下试试</p><p><img src="https://upload-images.jianshu.io/upload_images/3108076-2b15394ce2d0a253.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/448/format/webp" alt="img"></p><p>可以ping 通，则证明我们的配置没有问题。</p><h3 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h3><p>可以发现，我并没有关闭主机，和虚拟机的防火墙，但也可以实现 相互主机与虚拟机的互相ping 通。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> VMware </tag>
+            
+            <tag> 配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>已解决：（键盘驱动）由于其配置信息(注册表中的)不完整或已损坏,Windows 无法启动这个硬件设备。 (代号19）</title>
+      <link href="/2020/03/07/6281/"/>
+      <url>/2020/03/07/6281/</url>
+      
+        <content type="html"><![CDATA[<p>就在安装好VMware并且安装CentOS重启系统后莫名奇妙的键盘不能用了，一度怀疑键盘坏了，经过测试不是键盘的问题。</p><p>从键盘驱动下手，找到设备管理器进去。果不其然，键盘中的两个驱动都标有一个感叹号。没辙，驱动坏了，找到联想官网，结果摆弄半天愣是没有找到键盘驱动，作罢。</p><p>继续回到设备管理器，点开已损坏的驱动，有这样一行提示：由于其配置信息(注册表中的)不完整或已损坏,Windows 无法启动这个硬件设备。 (代号19）</p><p>找到错误提示后从百度搜索，最终得以找到解决方案。</p><p>使用软键盘（很庆幸鼠标驱动没坏）打开注册表regedit，定位到到这一</p><pre class=" language-php"><code class="language-php"><span class="token constant">HKEY_LOCAL_MACHINE</span><span class="token operator">/</span><span class="token constant">SYSTEM</span><span class="token operator">/</span>CurrentControlSet<span class="token operator">/</span>Control<span class="token operator">/</span><span class="token keyword">Class</span><span class="token operator">/</span><span class="token punctuation">{</span><span class="token constant">4D36E96B</span><span class="token operator">-</span><span class="token constant">E325</span><span class="token operator">-</span><span class="token constant">11CE</span><span class="token operator">-</span><span class="token constant">BFC1</span><span class="token operator">-</span><span class="token constant">08002BE10318</span><span class="token punctuation">}</span></code></pre><p>删除UpperFilters一项<br>卸载损坏驱动，重启</p><p>这个时候，依然未修复，但是提示信息变成了该设备无法启动（代码10）</p><p>再操作，<br>添加UpperFilters<br>值为kbdclass<br>再次卸载驱动，重启<br>完美成功！</p><p>巧的是，我找到的解决方案的作者也是碰到了装虚拟机的问题<br>所以，不出意外，应该是虚拟机的锅</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 错题集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux CentOS 下修改系统默认启动方式</title>
+      <link href="/2020/03/07/33892/"/>
+      <url>/2020/03/07/33892/</url>
+      
+        <content type="html"><![CDATA[<p>因为我的Linux默认启动方式是图形界面，遂想改为命令行界面。<br>在网上找了好几圈，好多人都是说使用init 命令，结果确实不行，仅且使用当次使用命令才有效果<br>最后终于，找到了解决方案</p><p>默认命令行界面启动：</p><pre class=" language-bash"><code class="language-bash">systemctl set-default multi-user.target</code></pre><p>默认图形化界面启动：</p><pre class=" language-bash"><code class="language-bash">systemctl set-default graphical.target</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Linux命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows 下安装 CentOS 7 系统</title>
+      <link href="/2020/03/07/63534/"/>
+      <url>/2020/03/07/63534/</url>
+      
+        <content type="html"><![CDATA[<p>今天准备打开 Linux 开启远程连接，结果打开是这样的：<br><img src="https://upload-images.jianshu.io/upload_images/3108076-762a9ee4a8b0c9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="被误删了！"><br>内心是有点崩溃的，想了一想，应该是前几天清理磁盘的时候给误删了<br>没办法，抄起家伙就是干！重装！<br>首先下载好CentOS 7映射文件<br>这里可以用阿里云站点下载：<br><a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">http://mirrors.aliyun.com/centos/7/isos/x86_64/</a><br><img src="https://upload-images.jianshu.io/upload_images/3108076-8902f01374720253.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载镜像文件"><br>选择DVD下载<br>下载完成之后将镜像文件放在一个相对安全的文件夹中，避免误删</p><h3 id="开始安装过程"><a href="#开始安装过程" class="headerlink" title="开始安装过程"></a>开始安装过程</h3><ul><li><p>选择新建虚拟机<br><img src="https://upload-images.jianshu.io/upload_images/3108076-ab83be469b2fa36d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建虚拟机"></p></li><li><p>选择自定义<br><img src="https://upload-images.jianshu.io/upload_images/3108076-1c954f9c3b5db6d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择自定义"></p></li><li><p>选择对应的版本<br><img src="https://upload-images.jianshu.io/upload_images/3108076-eda819de11a0a759.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择对应的版本"></p></li><li><p>选择映像文件<br><img src="https://upload-images.jianshu.io/upload_images/3108076-f7d4c5eb2d30b6ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择映像文件"></p></li><li><p>命名<br><img src="https://upload-images.jianshu.io/upload_images/3108076-5129f5ca74562eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命名"></p></li><li><p>选择处理器和内核数<br><img src="https://upload-images.jianshu.io/upload_images/3108076-05cb8bb1a12c82be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择处理器和内核数"></p></li><li><p>内存根据自己需要来配<br><img src="https://upload-images.jianshu.io/upload_images/3108076-9274980d71f16c72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="内存"></p></li><li><p>网络类型选择NAT模式<br><img src="https://upload-images.jianshu.io/upload_images/3108076-271e709d2ce3ca46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NAT"></p></li><li><p>默认推荐<br><img src="https://upload-images.jianshu.io/upload_images/3108076-7d271a4d68e4b78c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="默认推荐"></p></li><li><p>默认推荐<br><img src="https://upload-images.jianshu.io/upload_images/3108076-8ad08e78e40dedf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p></li><li><p>创建新磁盘<br><img src="https://upload-images.jianshu.io/upload_images/3108076-dc991ac7dade9c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建新磁盘"></p></li><li><p>分配磁盘大小，同样根据自己需要配置<br><img src="https://upload-images.jianshu.io/upload_images/3108076-d82c2ba0f9f3022d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分配磁盘大小"></p></li><li><p>下一步<br><img src="https://upload-images.jianshu.io/upload_images/3108076-5d5262f4a2ebc509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继续"></p></li><li><p>完成<br><img src="https://upload-images.jianshu.io/upload_images/3108076-bcf57983a256b64e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="完成"></p></li><li><p>成功创建<br><img src="https://upload-images.jianshu.io/upload_images/3108076-6bd1a170c365c3b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="成功创建"></p></li></ul><p>在往后面的相关配置可以参考这篇文章（我也是按照这个步骤完成的）<br><a href="https://www.jianshu.com/p/78445bc6bd85" target="_blank" rel="noopener">Centos7.x安装系统全过程教程</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> VMware </tag>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/03/05/16107/"/>
+      <url>/2020/03/05/16107/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

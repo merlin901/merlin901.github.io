@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Merlin</title>
+  
+  <subtitle>Merlin</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://merlin901.github.io/"/>
+  <updated>2020-03-07T17:42:20.274Z</updated>
+  <id>http://merlin901.github.io/</id>
+  
+  <author>
+    <name>Merlin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见技术词汇拼写</title>
+    <link href="http://merlin901.github.io/2020/03/08/31852/"/>
+    <id>http://merlin901.github.io/2020/03/08/31852/</id>
+    <published>2020-03-07T17:40:51.000Z</published>
+    <updated>2020-03-07T17:42:20.274Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在这个金三银四的时节，又到了跳槽和找工作的高峰期。作为一名合格的程序员，在简历中最最基本的就是技术词汇不能有错拼。虽然是个简单的单词，但是在简历上拼错的人也并不少见，经常是大小写不分，我自己就是一个鲜活的例子。尽管说一两个单词拼错了并不能说明你技术不行，但是在面试官面前你的
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="面试" scheme="http://merlin901.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转载】CentOS 7 网络环境配置</title>
+    <link href="http://merlin901.github.io/2020/03/07/3137/"/>
+    <id>http://merlin901.github.io/2020/03/07/3137/</id>
+    <published>2020-03-07T12:13:34.000Z</published>
+    <updated>2020-03-07T12:19:16.506Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文转载自&lt;a href=&quot;https://links.jianshu.com/go?to=https%3A%2F%2Fwww.cnblogs.com%2Fstormlong%2Fp%2F10854306.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/tags/Linux/"/>
+    
+      <category term="VMware" scheme="http://merlin901.github.io/tags/VMware/"/>
+    
+      <category term="配置" scheme="http://merlin901.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>已解决：（键盘驱动）由于其配置信息(注册表中的)不完整或已损坏,Windows 无法启动这个硬件设备。 (代号19）</title>
+    <link href="http://merlin901.github.io/2020/03/07/6281/"/>
+    <id>http://merlin901.github.io/2020/03/07/6281/</id>
+    <published>2020-03-07T12:11:40.000Z</published>
+    <updated>2020-03-07T12:15:01.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;就在安装好VMware并且安装CentOS重启系统后莫名奇妙的键盘不能用了，一度怀疑键盘坏了，经过测试不是键盘的问题。&lt;/p&gt;
+&lt;p&gt;从键盘驱动下手，找到设备管理器进去。果不其然，键盘中的两个驱动都标有一个感叹号。没辙，驱动坏了，找到联想官网，结果摆弄半天愣是没有找到键盘驱
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="错题集" scheme="http://merlin901.github.io/tags/%E9%94%99%E9%A2%98%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux CentOS 下修改系统默认启动方式</title>
+    <link href="http://merlin901.github.io/2020/03/07/33892/"/>
+    <id>http://merlin901.github.io/2020/03/07/33892/</id>
+    <published>2020-03-07T12:10:06.000Z</published>
+    <updated>2020-03-07T12:19:09.016Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;因为我的Linux默认启动方式是图形界面，遂想改为命令行界面。&lt;br&gt;在网上找了好几圈，好多人都是说使用init 命令，结果确实不行，仅且使用当次使用命令才有效果&lt;br&gt;最后终于，找到了解决方案&lt;/p&gt;
+&lt;p&gt;默认命令行界面启动：&lt;/p&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/tags/Linux/"/>
+    
+      <category term="Linux命令" scheme="http://merlin901.github.io/tags/Linux%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 下安装 CentOS 7 系统</title>
+    <link href="http://merlin901.github.io/2020/03/07/63534/"/>
+    <id>http://merlin901.github.io/2020/03/07/63534/</id>
+    <published>2020-03-07T11:40:18.000Z</published>
+    <updated>2020-03-07T12:16:56.627Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天准备打开 Linux 开启远程连接，结果打开是这样的：&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://merlin901.github.io/tags/Linux/"/>
+    
+      <category term="VMware" scheme="http://merlin901.github.io/tags/VMware/"/>
+    
+      <category term="虚拟机" scheme="http://merlin901.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://merlin901.github.io/2020/03/05/16107/"/>
+    <id>http://merlin901.github.io/2020/03/05/16107/</id>
+    <published>2020-03-05T13:24:17.552Z</published>
+    <updated>2020-03-07T09:23:49.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
