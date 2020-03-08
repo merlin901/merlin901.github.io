@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://merlin901.github.io/"/>
-  <updated>2020-03-07T17:42:20.274Z</updated>
+  <updated>2020-03-08T16:56:27.010Z</updated>
   <id>http://merlin901.github.io/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows系统中重设MySQL密码</title>
+    <link href="http://merlin901.github.io/2020/03/09/9882/"/>
+    <id>http://merlin901.github.io/2020/03/09/9882/</id>
+    <published>2020-03-08T16:34:24.000Z</published>
+    <updated>2020-03-08T16:56:27.010Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天在连接MySQL数据库时报了错：&lt;/p&gt;
+&lt;pre class=&quot; language-verilog&quot;&gt;&lt;code class=&quot;language-verilog&quot;&gt;Access denied &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="错题集" scheme="http://merlin901.github.io/tags/%E9%94%99%E9%A2%98%E9%9B%86/"/>
+    
+      <category term="MySQL" scheme="http://merlin901.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决博客中不显示图片的方法</title>
+    <link href="http://merlin901.github.io/2020/03/08/36176/"/>
+    <id>http://merlin901.github.io/2020/03/08/36176/</id>
+    <published>2020-03-08T10:09:00.000Z</published>
+    <updated>2020-03-08T10:12:03.477Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>常见技术词汇拼写</title>
     <link href="http://merlin901.github.io/2020/03/08/31852/"/>
     <id>http://merlin901.github.io/2020/03/08/31852/</id>
     <published>2020-03-07T17:40:51.000Z</published>
-    <updated>2020-03-07T17:42:20.274Z</updated>
+    <updated>2020-03-08T10:03:59.797Z</updated>
     
     <summary type="html">
     
