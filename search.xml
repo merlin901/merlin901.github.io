@@ -4,19 +4,38 @@
   
     
     <entry>
-      <title>Windows系统中重设MySQL密码</title>
-      <link href="/2020/03/09/9882/"/>
-      <url>/2020/03/09/9882/</url>
+      <title>MySQL之内连接与外连接</title>
+      <link href="/2020/03/12/59504/"/>
+      <url>/2020/03/12/59504/</url>
       
-        <content type="html"><![CDATA[<p>今天在连接MySQL数据库时报了错：</p><pre class=" language-verilog"><code class="language-verilog">Access denied <span class="token keyword">for</span> user 'root'@'localhost' <span class="token punctuation">(</span>using password<span class="token punctuation">:</span> NO<span class="token punctuation">)</span></code></pre><p>网上找了一圈答案，始终无法解决，最后在Stack Overflow的一份答案中被引到了<a href="https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html" target="_blank" rel="noopener">官方文档</a>，</p><p>终于，找到了一份靠谱的答案</p><ol><li>首先，以管理员的身份打开cmd，或者快捷键Ctrl+Shift+Esc找到服务，停止MySQL服务</li></ol><p>cmd命令</p><pre class=" language-shell"><code class="language-shell">net stop mysql</code></pre><ol start="2"><li>然后，先创建一个文件，名字无所谓，内容是一串修改root的代码，比如官方文档给出的：</li></ol><pre class=" language-shell"><code class="language-shell">ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';</code></pre><p>保存为<code>C:\mysql-init.txt</code>。</p><ol start="3"><li>随即来到MySQL的安装目录，找到<code>%MySQL_HOME%/bin</code>路径，在搜索栏中打开cmd</li></ol><p>使用一下命令：</p><pre class=" language-shell"><code class="language-shell">mysqld --defaults-file="%MySQL_HOME%\\bin\\my.ini" --init-file=C:\\mysql-init.txt --console</code></pre><p>以上的%MySQL_HOME%/bin代表你的MySQL根目录。</p><p>其中–defaults-file指向你的MySQL初始化文件</p><p>–init-file指向修改密码的文件</p><p>–console可以让你在控制台看到日志文件，可加可不加</p><ol start="4"><li>重启MySQL服务</li></ol><p>以管理员身份使用命令</p><pre class=" language-shell"><code class="language-shell">net start mysql</code></pre><p>或者从控制面板中进入</p><ol start="5"><li>使用新密码“MyNewPass”登录MySQL，至此修改密码成功</li></ol><pre class=" language-shell"><code class="language-shell">mysql -uroot -pMyNewPass</code></pre><p>至于mysql-init.txt文件，任你处置</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<p>虽然我们常常说增删改查增删改查，但是，真正使用的时候，一个查字基本囊括了我们操作数据库的大半江山。固然，查询是有多重要不言而喻。查询分为很多种：投影查询，分页查询，条件查询，笛卡尔查询、连接查询等。而连接查询就是这次我要讲的重点。</p><p>连接查询分为内连接和外连接。</p><ul><li><p>内连接（INNER JOIN）：查询两个表包含的共同包含的行数据。</p></li><li><p>外连接（OUTER JOIN）：外连接又具体分为以下三种：</p><ul><li>左连接（LEFT OUTER JOIN）：查询只包含左表的行数据，右表不包含的数据用NULL代替；</li><li>右连接（RIGHT OUTER JOIN）：查询只包含右表的行数据，左表不包含的数据用NULL代替；</li><li>全连接（FULL OUTER JOIN）：查询左右表包含的所有数据，空缺字段用NULL代替。</li></ul></li></ul><p>如果用集合表达比较直观：</p><p>INNER JOIN：很好理解，只保留共同元素，就是数学中的交集：result=A∩B</p><p><img src="/2020/03/12/59504/inner.png" alt="INNER JOIN"></p><p>LEFT OUTER JOIN：只保留左表数据，即result=A；</p><p><img src="/2020/03/12/59504/left.png" alt="LEFT OUTER JOIN"></p><p>RIGHT OUTER JOIN：只保留右表数据，即result=B；</p><p><img src="/2020/03/12/59504/right.png" alt="RIGHT OUTER JOIN"></p><p>FULL OUTER JOIN：保留全部行数据，类似于并集result=A∪B。</p><p><img src="/2020/03/12/59504/full.png" alt="FULL OUTER JOIN"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       
         <tags>
             
-            <tag> 错题集 </tag>
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows系统中重设MySQL密码</title>
+      <link href="/2020/03/09/9882/"/>
+      <url>/2020/03/09/9882/</url>
+      
+        <content type="html"><![CDATA[<p>今天在连接MySQL数据库时报了错：</p><pre class=" language-verilog"><code class="language-verilog">Access denied <span class="token keyword">for</span> user 'root'@'localhost' <span class="token punctuation">(</span>using password<span class="token punctuation">:</span> NO<span class="token punctuation">)</span></code></pre><p>网上找了一圈答案，始终无法解决，最后在Stack Overflow的一份答案中被引到了<a href="https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html" target="_blank" rel="noopener">官方文档</a>，</p><p>终于，找到了一份靠谱的答案</p><ol><li>首先，以管理员的身份打开cmd，或者快捷键Ctrl+Shift+Esc找到服务，停止MySQL服务</li></ol><p>cmd命令</p><pre class=" language-shell"><code class="language-shell">net stop mysql</code></pre><ol start="2"><li>然后，先创建一个文件，名字无所谓，内容是一串修改root的代码，比如官方文档给出的：</li></ol><pre class=" language-shell"><code class="language-shell">ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';</code></pre><p>保存为<code>C:\mysql-init.txt</code>。</p><ol start="3"><li>随即来到MySQL的安装目录，找到<code>%MySQL_HOME%/bin</code>路径，在搜索栏中打开cmd</li></ol><p>使用一下命令：</p><pre class=" language-shell"><code class="language-shell">mysqld --defaults-file="%MySQL_HOME%\\bin\\my.ini" --init-file=C:\\mysql-init.txt --console</code></pre><p>以上的%MySQL_HOME%/bin代表你的MySQL根目录。</p><p>其中–defaults-file指向你的MySQL初始化文件</p><p>–init-file指向修改密码的文件</p><p>–console可以让你在控制台看到日志文件，可加可不加</p><ol start="4"><li>重启MySQL服务</li></ol><p>以管理员身份使用命令</p><pre class=" language-shell"><code class="language-shell">net start mysql</code></pre><p>或者从控制面板中进入</p><ol start="5"><li>使用新密码“MyNewPass”登录MySQL，至此修改密码成功</li></ol><pre class=" language-shell"><code class="language-shell">mysql -uroot -pMyNewPass</code></pre><h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
             
             <tag> MySQL </tag>
+            
+            <tag> 错题集 </tag>
             
         </tags>
       

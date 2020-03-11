@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://merlin901.github.io/"/>
-  <updated>2020-03-08T16:56:27.010Z</updated>
+  <updated>2020-03-11T16:57:02.181Z</updated>
   <id>http://merlin901.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MySQL之内连接与外连接</title>
+    <link href="http://merlin901.github.io/2020/03/12/59504/"/>
+    <id>http://merlin901.github.io/2020/03/12/59504/</id>
+    <published>2020-03-11T16:10:35.000Z</published>
+    <updated>2020-03-11T16:57:02.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;虽然我们常常说增删改查增删改查，但是，真正使用的时候，一个查字基本囊括了我们操作数据库的大半江山。固然，查询是有多重要不言而喻。查询分为很多种：投影查询，分页查询，条件查询，笛卡尔查询、连接查询等。而连接查询就是这次我要讲的重点。&lt;/p&gt;
+&lt;p&gt;连接查询分为内连接和外连接。
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="MySQL" scheme="http://merlin901.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows系统中重设MySQL密码</title>
     <link href="http://merlin901.github.io/2020/03/09/9882/"/>
     <id>http://merlin901.github.io/2020/03/09/9882/</id>
     <published>2020-03-08T16:34:24.000Z</published>
-    <updated>2020-03-08T16:56:27.010Z</updated>
+    <updated>2020-03-08T17:05:04.675Z</updated>
     
     <summary type="html">
     
@@ -38,9 +64,9 @@
     
     
     
-      <category term="错题集" scheme="http://merlin901.github.io/tags/%E9%94%99%E9%A2%98%E9%9B%86/"/>
-    
       <category term="MySQL" scheme="http://merlin901.github.io/tags/MySQL/"/>
+    
+      <category term="错题集" scheme="http://merlin901.github.io/tags/%E9%94%99%E9%A2%98%E9%9B%86/"/>
     
   </entry>
   

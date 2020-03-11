@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Windows 下安装 CentOS 7 系统, Merlin">
-    <meta name="description" content="今天准备打开 Linux 开启远程连接，结果打开是这样的：内心是有点崩溃的，想了一想，应该是前几天清理磁盘的时候给误删了没办法，抄起家伙就是干！重装！首先下载好CentOS 7映射文件这里可以用阿里云站点下载：http://mirrors.">
+    <meta name="keywords" content="MySQL之内连接与外连接, Merlin">
+    <meta name="description" content="虽然我们常常说增删改查增删改查，但是，真正使用的时候，一个查字基本囊括了我们操作数据库的大半江山。固然，查询是有多重要不言而喻。查询分为很多种：投影查询，分页查询，条件查询，笛卡尔查询、连接查询等。而连接查询就是这次我要讲的重点。
+连接查询">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Windows 下安装 CentOS 7 系统 | Merlin</title>
+    <title>MySQL之内连接与外连接 | Merlin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Windows 下安装 CentOS 7 系统</h1>
+                    <h1 class="description center-align post-title">MySQL之内连接与外连接</h1>
                 </div>
             </div>
         </div>
@@ -427,31 +428,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
-                            <a href="/tags/VMware/">
-                                <span class="chip bg-color">VMware</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                                <span class="chip bg-color">虚拟机</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Linux/" class="post-category">
-                                Linux
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -460,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-03-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-03-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    317
+                    368
                 </div>
                 
 
@@ -497,40 +481,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>今天准备打开 Linux 开启远程连接，结果打开是这样的：<br><img src="https://upload-images.jianshu.io/upload_images/3108076-762a9ee4a8b0c9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="被误删了！"><br>内心是有点崩溃的，想了一想，应该是前几天清理磁盘的时候给误删了<br>没办法，抄起家伙就是干！重装！<br>首先下载好CentOS 7映射文件<br>这里可以用阿里云站点下载：<br><a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">http://mirrors.aliyun.com/centos/7/isos/x86_64/</a><br><img src="https://upload-images.jianshu.io/upload_images/3108076-8902f01374720253.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载镜像文件"><br>选择DVD下载<br>下载完成之后将镜像文件放在一个相对安全的文件夹中，避免误删</p>
-<h3 id="开始安装过程"><a href="#开始安装过程" class="headerlink" title="开始安装过程"></a>开始安装过程</h3><ul>
-<li><p>选择新建虚拟机<br><img src="https://upload-images.jianshu.io/upload_images/3108076-ab83be469b2fa36d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建虚拟机"></p>
+                <p>虽然我们常常说增删改查增删改查，但是，真正使用的时候，一个查字基本囊括了我们操作数据库的大半江山。固然，查询是有多重要不言而喻。查询分为很多种：投影查询，分页查询，条件查询，笛卡尔查询、连接查询等。而连接查询就是这次我要讲的重点。</p>
+<p>连接查询分为内连接和外连接。</p>
+<ul>
+<li><p>内连接（INNER JOIN）：查询两个表包含的共同包含的行数据。</p>
 </li>
-<li><p>选择自定义<br><img src="https://upload-images.jianshu.io/upload_images/3108076-1c954f9c3b5db6d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择自定义"></p>
-</li>
-<li><p>选择对应的版本<br><img src="https://upload-images.jianshu.io/upload_images/3108076-eda819de11a0a759.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择对应的版本"></p>
-</li>
-<li><p>选择映像文件<br><img src="https://upload-images.jianshu.io/upload_images/3108076-f7d4c5eb2d30b6ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择映像文件"></p>
-</li>
-<li><p>命名<br><img src="https://upload-images.jianshu.io/upload_images/3108076-5129f5ca74562eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命名"></p>
-</li>
-<li><p>选择处理器和内核数<br><img src="https://upload-images.jianshu.io/upload_images/3108076-05cb8bb1a12c82be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择处理器和内核数"></p>
-</li>
-<li><p>内存根据自己需要来配<br><img src="https://upload-images.jianshu.io/upload_images/3108076-9274980d71f16c72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="内存"></p>
-</li>
-<li><p>网络类型选择NAT模式<br><img src="https://upload-images.jianshu.io/upload_images/3108076-271e709d2ce3ca46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NAT"></p>
-</li>
-<li><p>默认推荐<br><img src="https://upload-images.jianshu.io/upload_images/3108076-7d271a4d68e4b78c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="默认推荐"></p>
-</li>
-<li><p>默认推荐<br><img src="https://upload-images.jianshu.io/upload_images/3108076-8ad08e78e40dedf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-</li>
-<li><p>创建新磁盘<br><img src="https://upload-images.jianshu.io/upload_images/3108076-dc991ac7dade9c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建新磁盘"></p>
-</li>
-<li><p>分配磁盘大小，同样根据自己需要配置<br><img src="https://upload-images.jianshu.io/upload_images/3108076-d82c2ba0f9f3022d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分配磁盘大小"></p>
-</li>
-<li><p>下一步<br><img src="https://upload-images.jianshu.io/upload_images/3108076-5d5262f4a2ebc509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继续"></p>
-</li>
-<li><p>完成<br><img src="https://upload-images.jianshu.io/upload_images/3108076-bcf57983a256b64e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="完成"></p>
-</li>
-<li><p>成功创建<br><img src="https://upload-images.jianshu.io/upload_images/3108076-6bd1a170c365c3b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="成功创建"></p>
+<li><p>外连接（OUTER JOIN）：外连接又具体分为以下三种：</p>
+<ul>
+<li>左连接（LEFT OUTER JOIN）：查询只包含左表的行数据，右表不包含的数据用NULL代替；</li>
+<li>右连接（RIGHT OUTER JOIN）：查询只包含右表的行数据，左表不包含的数据用NULL代替；</li>
+<li>全连接（FULL OUTER JOIN）：查询左右表包含的所有数据，空缺字段用NULL代替。</li>
+</ul>
 </li>
 </ul>
-<p>在往后面的相关配置可以参考这篇文章（我也是按照这个步骤完成的）<br><a href="https://www.jianshu.com/p/78445bc6bd85" target="_blank" rel="noopener">Centos7.x安装系统全过程教程</a></p>
+<p>如果用集合表达比较直观：</p>
+<p>INNER JOIN：很好理解，只保留共同元素，就是数学中的交集：result=A∩B</p>
+<p><img src="/2020/03/12/59504/inner.png" alt="INNER JOIN"></p>
+<p>LEFT OUTER JOIN：只保留左表数据，即result=A；</p>
+<p><img src="/2020/03/12/59504/left.png" alt="LEFT OUTER JOIN"></p>
+<p>RIGHT OUTER JOIN：只保留右表数据，即result=B；</p>
+<p><img src="/2020/03/12/59504/right.png" alt="RIGHT OUTER JOIN"></p>
+<p>FULL OUTER JOIN：保留全部行数据，类似于并集result=A∪B。</p>
+<p><img src="/2020/03/12/59504/full.png" alt="FULL OUTER JOIN"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -574,7 +546,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://merlin901.github.io/2020/03/07/63534/">http://merlin901.github.io/2020/03/07/63534/</a>
+                    <a href="http://merlin901.github.io/2020/03/12/59504/">http://merlin901.github.io/2020/03/12/59504/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,16 +584,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/VMware/">
-                                    <span class="chip bg-color">VMware</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                                    <span class="chip bg-color">虚拟机</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
                         </div>
@@ -792,7 +756,7 @@
         repo: 'blog-comments',
         owner: 'merlin901',
         admin: "merlin901",
-        id: '2020-03-07T19-40-18',
+        id: '2020-03-12T00-10-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -813,52 +777,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/07/33892/">
+                <a href="/2020/03/12/59504/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Linux CentOS 下修改系统默认启动方式">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="MySQL之内连接与外连接">
                         
-                        <span class="card-title">Linux CentOS 下修改系统默认启动方式</span>
+                        <span class="card-title">MySQL之内连接与外连接</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            因为我的Linux默认启动方式是图形界面，遂想改为命令行界面。在网上找了好几圈，好多人都是说使用init 命令，结果确实不行，仅且使用当次使用命令才有效果最后终于，找到了解决方案
-默认命令行界面启动：
-systemctl set-defau
+                            虽然我们常常说增删改查增删改查，但是，真正使用的时候，一个查字基本囊括了我们操作数据库的大半江山。固然，查询是有多重要不言而喻。查询分为很多种：投影查询，分页查询，条件查询，笛卡尔查询、连接查询等。而连接查询就是这次我要讲的重点。
+连接查询
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-12
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Merlin
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/Linux%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">Linux命令</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -872,24 +829,26 @@ systemctl set-defau
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/05/16107/">
+                <a href="/2020/03/09/9882/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Windows系统中重设MySQL密码">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Windows系统中重设MySQL密码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            今天在连接MySQL数据库时报了错：
+Access denied for user 'root'@'localhost' (using password: NO)
+网上找了一圈答案，始终无法解决，最后在Stack Overflow的一份答案
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-09
                             </span>
                         <span class="publish-author">
                             
@@ -898,6 +857,18 @@ systemctl set-defau
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%94%99%E9%A2%98%E9%9B%86/">
+                        <span class="chip bg-color">错题集</span>
+                    </a>
+                    
                 </div>
                 
             </div>
